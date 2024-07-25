@@ -1,0 +1,43 @@
+<div class="add-movie">
+  <label for="movielink"><b>Movie-URL</b></label>
+  <input
+    type="text"
+    placeholder="Enter Movie-URL"
+    id="movielink"
+    [(ngModel)]="newMovie.imagelink"
+  />
+  <label for="title"><b>Title</b></label>
+  <input
+    type="text"
+    placeholder="Enter Title of the movie"
+    id="title"
+    [(ngModel)]="newMovie.title"
+  />
+  <label for="rating"><b>Rating</b></label>
+  <input
+    type="text"
+    placeholder="Enter rating of the Movie"
+    id="rating"
+    [(ngModel)]="newMovie.rating"
+  />
+  <label for="summary"><b>Summary</b></label>
+  <input
+    type="text"
+    placeholder="Enter summary"
+    id="summary"
+    [(ngModel)]="newMovie.summary"
+  />
+  <button (click)="addMovie()">➕Add Movie</button>
+</div>
+
+<div class="Movie-card">
+  @for(movie of movies; track movie.title){
+  <app-movies [movie]="movie" />
+  }
+</div>
+
+<!-- <input
+  type="text"
+  [(ngModel)]="movie.imagelink"
+  placeholder="Enter image URL"
+/> -->

@@ -1,0 +1,11 @@
+.Movie-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.add-movie
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

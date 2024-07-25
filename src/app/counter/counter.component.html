@@ -1,0 +1,14 @@
+<div class="like-dislike-buttons">
+  <button (click)="likeIncrement()">🩷 {{ like }}</button>
+  <button (click)="disLikeIncrement()">👎 {{ disLike }}</button>
+</div>
+@if((like-disLike)>10){ You are awesome!! }
+<!-- <progress
+  id="range"
+  max="100"
+  value="{{ (like * 100) / (like + disLike) }}"
+></progress>
+
+<progress id="range" max="{{ like + disLike }}" value="{{ like }}"></progress> -->
+
+<!-- <progress id="range" [max]="like + disLike" [value]="like"></progress> -->

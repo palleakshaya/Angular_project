@@ -1,0 +1,16 @@
+<div class="movie-container">
+  <img src="{{ movie.imagelink }}" alt="{{ movie.title }}-movie-poster" />
+  <div class="title-rating">
+    <h3 class="title">{{ movie.title }}</h3>
+    <h4>⭐{{ movie.ratings }}</h4>
+  </div>
+  <button (click)="showContent()" class="read-more">Read More</button>
+
+  @if (show) {
+  <p class="summary">
+    {{ movie.summary }}
+  </p>
+  }
+
+  <app-counter />
+</div>

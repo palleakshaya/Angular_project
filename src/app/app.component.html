@@ -1,0 +1,61 @@
+<!-- <body> -->
+<!-- <img
+    src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg"
+    alt="Rose"
+  />
+  <h1>
+    Hello, <span>{{ name }}</span>
+  </h1> -->
+<!-- <app-user />
+  <app-user
+    name="Doggyy!!"
+    imagelink="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/10-intelligent-dog-breeds/golden-retriever-tongue-out.jpg"
+  />
+  <app-user
+    name="Pandaaa!!"
+    imagelink="https://t4.ftcdn.net/jpg/05/54/52/13/360_F_554521329_ngmDQSjSrUSRnbK2xK0bkcprsinG9Xdv.jpg"
+  /> -->
+<!-- <app-movies />
+  <app-movies
+    imagelink="https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG"
+    title="RRR"
+    ratings="8.8"
+    summary="RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments."
+  />
+  <app-movies
+    imagelink="https://m.media-amazon.com/images/M/MV5BY2Y5ZWMwZDgtZDQxYy00Mjk0LThhY2YtMmU1MTRmMjVhMjRiXkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_FMjpg_UX1000_.jpg"
+    title="Jai Bheem"
+    ratings="8.8"
+    summary="A tribal woman and a righteous lawyer battle in court to unravel the mystery around the disappearance of her husband, who was picked up the police on a false case"
+  />
+  <app-movies
+  /> -->
+<!-- @for(movie of movies; track movie.title){
+  <app-movies
+    imagelink="{{ movie.imagelink }}"
+    title="{{ movie.title }}"
+    ratings="{{ movie.ratings }}"
+    summary="{{ movie.summary }}"
+  />
+  } -->
+<app-movie-list [movies]="movies" />
+<!-- <app-counter /> -->
+
+<!-- <app-color-game /> -->
+
+<!-- <app-color-box [colorList]="colorList"></app-color-box> -->
+
+<!-- <app-add-movies /> -->
+
+<!-- @for(movie of movies; track movie.title){
+    <app-movies
+     [imagelink]="movie.imagelink "
+     [title]="movie.title"
+      [ratings]=" movie.ratings "
+      [summary]="movie.summary"
+    />
+    } -->
+
+<!-- the above one is called Property Binding-->
+<!-- </body> -->
+<router-outlet />
