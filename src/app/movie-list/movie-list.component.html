@@ -1,5 +1,5 @@
 <!-- <div class="Whole-page"> -->
-<div class="add-movie">
+<!-- <div class="add-movie">
   <mat-form-field class="example-full-width">
     <mat-label>Movie URL</mat-label>
     <input
@@ -39,7 +39,10 @@
       [(ngModel)]="newMovie.summary"
     />
   </mat-form-field>
-  <!-- <label for="movielink"><b>Movie-URL</b></label>
+
+  <button mat-raised-button (click)="addMovie()">➕Add Movie</button>
+</div> -->
+<!-- <label for="movielink"><b>Movie-URL</b></label>
   <input
     type="text"
     placeholder="Enter Movie-URL"
@@ -47,14 +50,14 @@
     [(ngModel)]="newMovie.imagelink"
   /> -->
 
-  <!-- <label for="title"><b>Title</b></label>
+<!-- <label for="title"><b>Title</b></label>
   <input
     type="text"
     placeholder="Enter Title of the movie"
     id="title"
     [(ngModel)]="newMovie.title"
   /> -->
-  <!-- <label for="rating"><b>Rating</b></label>
+<!-- <label for="rating"><b>Rating</b></label>
   <input
     type="text"
     placeholder="Enter rating of the Movie"
@@ -62,7 +65,7 @@
     [(ngModel)]="newMovie.rating"
   /> -->
 
-  <!-- <label for="summary"><b>Summary</b></label>
+<!-- <label for="summary"><b>Summary</b></label>
   <input
    
     placeholder="Enter summary"
@@ -70,11 +73,8 @@
    
   /> -->
 
-  <button mat-raised-button (click)="addMovie()">➕Add Movie</button>
-</div>
-
 <div class="Movie-card">
-  @for(movie of movies; track movie.title){
+  @for(movie of movieService.movies; track movie.title){
   <app-movies [movie]="movie" (deleteItem)="deleteItem($event)" />
   }
 </div>

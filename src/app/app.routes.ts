@@ -5,6 +5,7 @@ import { ColorBoxComponent } from './color-box/color-box.component';
 import { ColorGameComponent } from './color-game/color-game.component';
 import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AddMovieComponent } from './add-movie/add-movie.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +20,10 @@ export const routes: Routes = [
     path: 'films',
     redirectTo: '/movies',
     pathMatch: 'full',
+  },
+  {
+    path: 'movies/add-movie',
+    component: AddMovieComponent,
   },
   {
     path: 'color',
