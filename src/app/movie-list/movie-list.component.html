@@ -1,33 +1,76 @@
+<!-- <div class="Whole-page"> -->
 <div class="add-movie">
-  <label for="movielink"><b>Movie-URL</b></label>
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      [(ngModel)]="newMovie.imagelink"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Ex: Hi Nanna"
+      [(ngModel)]="newMovie.title"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Rating</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Ex: 9.8"
+      [(ngModel)]="newMovie.rating"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Summary</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter Summary"
+      [(ngModel)]="newMovie.summary"
+    />
+  </mat-form-field>
+  <!-- <label for="movielink"><b>Movie-URL</b></label>
   <input
     type="text"
     placeholder="Enter Movie-URL"
     id="movielink"
     [(ngModel)]="newMovie.imagelink"
-  />
-  <label for="title"><b>Title</b></label>
+  /> -->
+
+  <!-- <label for="title"><b>Title</b></label>
   <input
     type="text"
     placeholder="Enter Title of the movie"
     id="title"
     [(ngModel)]="newMovie.title"
-  />
-  <label for="rating"><b>Rating</b></label>
+  /> -->
+  <!-- <label for="rating"><b>Rating</b></label>
   <input
     type="text"
     placeholder="Enter rating of the Movie"
     id="rating"
     [(ngModel)]="newMovie.rating"
-  />
-  <label for="summary"><b>Summary</b></label>
+  /> -->
+
+  <!-- <label for="summary"><b>Summary</b></label>
   <input
-    type="text"
+   
     placeholder="Enter summary"
     id="summary"
-    [(ngModel)]="newMovie.summary"
-  />
-  <button (click)="addMovie()">➕Add Movie</button>
+   
+  /> -->
+
+  <button mat-raised-button (click)="addMovie()">➕Add Movie</button>
 </div>
 
 <div class="Movie-card">
@@ -35,6 +78,7 @@
   <app-movies [movie]="movie" (deleteItem)="deleteItem($event)" />
   }
 </div>
+<!-- </div> -->
 <!-- <app-movies (deleteItem)="deleteItem($event)" /> -->
 
 <!-- <input

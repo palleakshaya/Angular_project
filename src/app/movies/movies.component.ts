@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
 import { CounterComponent } from '../counter/counter.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CounterComponent],
+  imports: [CounterComponent, MatButtonModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',
 })

@@ -1,8 +1,12 @@
 <div class="like-dislike-buttons">
-  <button (click)="likeIncrement()">🩷 {{ like }}</button>
-  <button (click)="disLikeIncrement()">👎 {{ disLike }}</button>
+  <button mat-button class="like" (click)="likeIncrement()">
+    🩷 {{ like }}
+  </button>
+  <button mat-button class="disLike" (click)="disLikeIncrement()">
+    👎 {{ disLike }}
+  </button>
 </div>
-@if((like-disLike)>10){ You are awesome!! }
+<!-- @if((like-disLike)>10){ You are awesome!! } -->
 <!-- <progress
   id="range"
   max="100"

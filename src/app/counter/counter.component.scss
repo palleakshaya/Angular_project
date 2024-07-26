@@ -1,4 +1,13 @@
 .like-dislike-buttons{
     display: flex;
-    gap: 5px;
+    gap: 2px;
+}
+.like{
+    max-width: 1px;
+    width: 100%;
+}
+.dislike{
+    max-width: 1px;
+    width: 100%;
+
 }

@@ -1,11 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { MoviesComponent } from '../movies/movies.component';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [MoviesComponent, FormsModule],
+  imports: [
+    MoviesComponent,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
 })
@@ -96,12 +105,12 @@ export class MovieListComponent {
       ratings: '8',
     },
     {
-      title: 'PS2',
+      title: 'Seetharamam',
       imagelink:
-        'https://m.media-amazon.com/images/M/MV5BYjFjMTQzY2EtZjQ5MC00NGUyLWJiYWMtZDI3MTQ1MGU4OGY2XkEyXkFqcGdeQXVyNDExMjcyMzA@._V1_.jpg',
+        'https://images.tv9telugu.com/wp-content/uploads/2022/09/seetharamam-1.jpg',
       summary:
-        'Ponniyin Selvan: I is an upcoming Indian Tamil-language epic period action film directed by Mani Ratnam, who co-wrote it with Elango Kumaravel and B. Jeyamohan',
-      ratings: '8',
+        'An orphaned soldier life changes after he receives a letter from a girl named Sita. He meets her and love blossoms between them. When he returns to her camp in Kashmir, he sends a letter to Sita that will not reach her.',
+      ratings: '9',
     },
     {
       title: 'Thor: Ragnarok',

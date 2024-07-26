@@ -4,7 +4,7 @@
     <h3 class="title">{{ movie.title }}</h3>
     <h4>⭐{{ movie.ratings }}</h4>
   </div>
-  <button (click)="showContent()" class="read-more">Read More</button>
+  <button mat-button (click)="showContent()" class="read-more">Summary</button>
 
   @if (show) {
   <p class="summary">
@@ -12,6 +12,10 @@
   </p>
   }
 
-  <app-counter />
-  <button (click)="deleteMovie()">🗑️delete</button>
+  <div class="like-delete">
+    <app-counter />
+    <button mat-button class="deleteButton" (click)="deleteMovie()">🗑️</button>
+  </div>
 </div>
+
+<!-- mat-fab aria-label -->

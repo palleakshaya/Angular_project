@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.scss',
 })
 export class CounterComponent {
-  like = 0;
-  disLike = 0;
+  like = 24;
+  disLike = 12;
 
   likeIncrement() {
     this.like += 1;
