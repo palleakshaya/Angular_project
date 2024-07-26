@@ -32,9 +32,10 @@
 
 <div class="Movie-card">
   @for(movie of movies; track movie.title){
-  <app-movies [movie]="movie" />
+  <app-movies [movie]="movie" (deleteItem)="deleteItem($event)" />
   }
 </div>
+<!-- <app-movies (deleteItem)="deleteItem($event)" /> -->
 
 <!-- <input
   type="text"

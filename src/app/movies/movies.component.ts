@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
 import { CounterComponent } from '../counter/counter.component';
 
@@ -10,13 +10,15 @@ import { CounterComponent } from '../counter/counter.component';
   styleUrl: './movies.component.scss',
 })
 export class MoviesComponent {
+  @Output() deleteItem = new EventEmitter<any>();
+
   @Input() movie = {
+    title: 'Vikram',
     imagelink:
       'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
-    title: 'Vikram',
-    ratings: '9.1',
     summary:
       'Members of a black ops team must track and eliminate a gang of masked murderers.',
+    ratings: '9.1',
   };
   show = true;
 
@@ -29,5 +31,8 @@ export class MoviesComponent {
     // }
 
     // this.show = !this.show  - Another method
+  }
+  deleteMovie() {
+    this.deleteItem.emit(this.movie);
   }
 }

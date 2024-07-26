@@ -38,7 +38,7 @@
     summary="{{ movie.summary }}"
   />
   } -->
-<app-movie-list [movies]="movies" />
+<!-- <app-movie-list [movies]="movies" /> -->
 <!-- <app-counter /> -->
 
 <!-- <app-color-game /> -->
@@ -58,4 +58,15 @@
 
 <!-- the above one is called Property Binding-->
 <!-- </body> -->
+<header>
+  <nav>
+    <a routerLink="/">Home</a>
+    |
+    <a routerLink="/movies">Movies</a>
+    |
+    <a routerLink="/color">Color</a>
+  </nav>
+</header>
+<!-- <router-outlet></router-outlet> -->
+
 <router-outlet />
