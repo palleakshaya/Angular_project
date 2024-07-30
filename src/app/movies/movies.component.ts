@@ -1,16 +1,28 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
 import { CounterComponent } from '../counter/counter.component';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CounterComponent, MatButtonModule],
+  imports: [
+    CounterComponent,
+    MatButtonModule,
+    MatIconButton,
+    RouterLink,
+    MatIconModule,
+  ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',
 })
 export class MoviesComponent {
+  @Input() id: any;
+  getMovieByIdex(idx: any) {
+    // throw new Error('Method not implemented.');
+  }
   @Output() deleteItem = new EventEmitter<any>();
 
   @Input() movie = {

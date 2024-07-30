@@ -75,7 +75,7 @@
 
 <div class="Movie-card">
   @for(movie of movieService.movies; track movie.title){
-  <app-movies [movie]="movie" (deleteItem)="deleteItem($event)" />
+  <app-movies [movie]="movie" (deleteItem)="deleteItem($event)" [id]="$index" />
   }
 </div>
 <!-- </div> -->

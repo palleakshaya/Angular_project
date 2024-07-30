@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MovieService {
+  // getMovieByIdex(idx: any): any {
+  //   throw new Error('Method not implemented.');
+  // }
   movies = [
     {
       title: 'Vikram',
@@ -100,5 +103,8 @@ export class MovieService {
   }
   deleteItem(movie: any) {
     this.movies.splice(this.movies.indexOf(movie), 1);
+  }
+  getMovieByIdex(idx: any) {
+    return this.movies[idx];
   }
 }
