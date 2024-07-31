@@ -20,8 +20,23 @@ import { MovieService } from '../movie.service';
   styleUrl: './movie-list.component.scss',
 })
 export class MovieListComponent {
+  movies: any = [];
+  isLoading: boolean = true;
+  msg = '';
   constructor(public movieService: MovieService) {
     // console.log(this.movieService.movies)
+  }
+  ngOnInit() {
+    this.movieService
+      .getAllMovies()
+      .then((data) => {
+        this.movies = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong';
+      });
   }
   deleteItem(movie: any) {
     this.movieService.deleteItem(movie);

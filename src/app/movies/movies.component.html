@@ -1,11 +1,11 @@
 <div class="movie-container">
-  <img src="{{ movie.imagelink }}" alt="{{ movie.title }}-movie-poster" />
+  <img src="{{ movie.poster }}" alt="{{ movie.name }}-movie-poster" />
   <div class="title-rating">
-    <h3 class="title">{{ movie.title }}</h3>
+    <h3 class="title">{{ movie.name }}</h3>
     <button mat-icon-button routerLink="/movies/{{ id }}" class="info">
       <mat-icon>info</mat-icon>
     </button>
-    <h4>⭐{{ movie.ratings }}</h4>
+    <h4>⭐{{ movie.rating }}</h4>
   </div>
   <button mat-button (click)="showContent()" class="read-more">Summary</button>
 

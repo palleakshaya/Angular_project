@@ -107,4 +107,14 @@ export class MovieService {
   getMovieByIdex(idx: any) {
     return this.movies[idx];
   }
+  getMovieById(id: string) {
+    return fetch(
+      `https://669a428d9ba098ed61fef756.mockapi.io/Movies/${id}`
+    ).then((res) => res.json());
+  }
+  getAllMovies() {
+    return fetch('https://669a428d9ba098ed61fef756.mockapi.io/Movies').then(
+      (res) => res.json()
+    );
+  }
 }

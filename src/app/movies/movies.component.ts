@@ -26,12 +26,13 @@ export class MoviesComponent {
   @Output() deleteItem = new EventEmitter<any>();
 
   @Input() movie = {
-    title: 'Vikram',
-    imagelink:
+    name: '',
+    poster:
       'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
+    rating: '9.1',
     summary:
       'Members of a black ops team must track and eliminate a gang of masked murderers.',
-    ratings: '9.1',
+    trailer: '',
   };
   show = true;
 

@@ -1,7 +1,18 @@
 <div class="movie-container">
-  <img src="{{ movie.imagelink }}" alt="{{ movie.title }}-movie-poster" />
+  <iframe
+    width="914"
+    height="514"
+    [src]="trustedUrl"
+    title="Vikram - Official trailer | Kamalhasan | Sun Pictures"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+  <!-- <img src="{{ movie.trailer }}" alt="{{ movie.name }}-movie-poster" /> -->
   <div class="title-rating">
-    <h3 class="title">{{ movie.title }}</h3>
-    <h4>⭐{{ movie.ratings }}</h4>
+    <h3 class="title">{{ movie.name }}</h3>
+    <h4>⭐{{ movie.rating }}</h4>
   </div>
+  <p class="movie-summary">{{ movie.summary }}</p>
 </div>
