@@ -8,6 +8,14 @@ import { ColorGameComponent } from './color-game/color-game.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
+export interface IMovie {
+  id?: string;
+  name: string;
+  poster: string;
+  rating: number;
+  summary: string;
+  trailer: string;
+}
 @Component({
   selector: 'app-root',
 

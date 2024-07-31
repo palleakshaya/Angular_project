@@ -1,0 +1,80 @@
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="add-movie-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      formControlName="poster"
+    />
+    @if(poster?.touched && poster?.hasError('required') ){
+    <mat-error>Poster URL is <strong>required</strong></mat-error>
+    } @if(poster?.touched && poster?.hasError('invalidUrl') ){
+    <mat-error> <strong>Invalid </strong> URL</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie Name</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Ex: Hi Nanna"
+      formControlName="name"
+    />
+    @if(name?.touched && name?.hasError('required') ){
+    <mat-error>Name is <strong>required</strong></mat-error>
+    } @if(name?.touched && name?.hasError('minlength') ){
+    <mat-error>Please provide full movie name</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Rating</mat-label>
+    <input
+      matInput
+      type="number"
+      placeholder="Ex: 9"
+      formControlName="rating"
+    />
+    @if(rating?.touched && rating?.hasError('required') ){
+    <mat-error>Rating is <strong>required</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('min') ){
+    <mat-error>Rating is <strong>too low </strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('max') ){
+    <mat-error>Rating is too high </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Summary</mat-label>
+    <input matInput placeholder="Enter Summary" formControlName="summary" />
+    @if(summary?.touched && summary?.hasError('required') ){
+    <mat-error>Summary is <strong>required</strong></mat-error>
+    } @if(summary?.touched && summary?.hasError('minlength') ){
+    <mat-error
+      >Summary must be <strong>atleast 50 charecters </strong>long</mat-error
+    >
+    } @if(summary?.touched && summary?.hasError('maxlength') ){
+    <mat-error
+      >Summary <strong>cannot exceed 1000 </strong>charecters</mat-error
+    >
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Trailer URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      formControlName="trailer"
+    />
+    @if(trailer?.touched && trailer?.hasError('required') ){
+    <mat-error>Trailer URL is <strong>required</strong></mat-error>
+    } @if(trailer?.touched && trailer?.hasError('invalidUrl') ){
+    <mat-error> <strong>Invalid </strong> URL</mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">➕Add Movie</button>
+</form>

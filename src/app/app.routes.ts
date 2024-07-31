@@ -8,6 +8,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { authGuard } from './auth.guard';
+import { AddMovieFormModuleComponent } from './add-movie-form-module/add-movie-form-module.component';
 
 export const routes: Routes = [
   {
@@ -21,8 +22,8 @@ export const routes: Routes = [
       { path: '', component: MovieListComponent },
       {
         path: 'add-movie',
-        component: AddMovieComponent,
-        canActivate: [authGuard],
+        component: AddMovieFormModuleComponent,
+        // canActivate: [authGuard],
       },
       { path: ':id', component: MovieDetailsComponent },
     ],

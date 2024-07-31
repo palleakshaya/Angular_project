@@ -21,10 +21,12 @@ export class AddMovieComponent {
     summary: '',
     trailer: '',
   };
-  constructor(public movieService: MovieService, public route: Router) {}
+  constructor(public movieService: MovieService, public route: Router) {
+    this.newMovie = this.movieService.getNewMovie();
+  }
 
   addMovie(newMovie: any) {
-    this.movieService.addMovie(this.newMovie).then(() => {
+    this.movieService.addMovie(newMovie).then(() => {
       this.route.navigate(['movies']);
     });
 
