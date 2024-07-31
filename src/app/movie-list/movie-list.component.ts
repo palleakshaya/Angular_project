@@ -27,6 +27,9 @@ export class MovieListComponent {
     // console.log(this.movieService.movies)
   }
   ngOnInit() {
+    this.loadMovies();
+  }
+  loadMovies() {
     this.movieService
       .getAllMovies()
       .then((data) => {
@@ -38,11 +41,30 @@ export class MovieListComponent {
         this.msg = 'Something went wrong';
       });
   }
+
   deleteItem(movie: any) {
-    this.movieService.deleteItem(movie);
+    this.movieService.deleteItem(movie).then(() => this.loadMovies());
   }
 
+  // when delete is clicked->delete method is called->internally GET Method called so that data will be fetched from API->with that model get updated so view will be updated automatically.
+
   // deleteMovie() {
+
+  // ngOnInit(): void {
+  //   this.loadMovies();
+  // }
+
+  // loadMovies(): void {
+  //   this.movieService.getMovieById('all') // Adjust this to your actual method for getting all movies
+  //     .subscribe(movies => this.movies = movies);
+  // }
+
+  // deleteMovie(id: string): void {
+  //   this.movieService.deleteMovieById(id).subscribe(() => {
+  //     this.movies = this.movies.filter(movie => movie.id !== id);
+  //     alert('Movie deleted successfully!');
+  //   });
+  // }
 
   // }
   // deleteMovie() {

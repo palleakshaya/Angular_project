@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MovieService } from '../movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-movie',
@@ -14,15 +15,19 @@ import { MovieService } from '../movie.service';
 })
 export class AddMovieComponent {
   newMovie: any = {
-    title: '',
-    imagelink: '',
+    name: '',
+    poster: '',
+    rating: '',
     summary: '',
-    ratings: '',
+    trailer: '',
   };
-  constructor(public movieService: MovieService) {}
+  constructor(public movieService: MovieService, public route: Router) {}
 
-  addMovie() {
-    this.movieService.addMovie(this.newMovie);
+  addMovie(newMovie: any) {
+    this.movieService.addMovie(this.newMovie).then(() => {
+      this.route.navigate(['movies']);
+    });
+
     // this.movieService.movies.push(
     // imagelink:this.newMovie.imagelink,
     // title:this.newMovie.title,

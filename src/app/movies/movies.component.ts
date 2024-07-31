@@ -2,8 +2,9 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { MovieListComponent } from '../movie-list/movie-list.component';
 import { CounterComponent } from '../counter/counter.component';
 import { MatButtonModule, MatIconButton } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movies',
@@ -27,11 +28,9 @@ export class MoviesComponent {
 
   @Input() movie = {
     name: '',
-    poster:
-      'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
-    rating: '9.1',
-    summary:
-      'Members of a black ops team must track and eliminate a gang of masked murderers.',
+    poster: '',
+    rating: '',
+    summary: '',
     trailer: '',
   };
   show = true;
@@ -46,7 +45,16 @@ export class MoviesComponent {
 
     // this.show = !this.show  - Another method
   }
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
   deleteMovie() {
+    // this.movieService.deleteItem(this.id);
+    // this.router.navigate(['/movies']);
+
     this.deleteItem.emit(this.movie);
   }
 }

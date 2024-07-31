@@ -5,7 +5,7 @@
       matInput
       type="text"
       placeholder="Enter URL"
-      [(ngModel)]="newMovie.imagelink"
+      [(ngModel)]="newMovie.poster"
     />
   </mat-form-field>
 
@@ -15,7 +15,7 @@
       matInput
       type="text"
       placeholder="Ex: Hi Nanna"
-      [(ngModel)]="newMovie.title"
+      [(ngModel)]="newMovie.name"
     />
   </mat-form-field>
 
@@ -38,6 +38,15 @@
       [(ngModel)]="newMovie.summary"
     />
   </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Trailer URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      [(ngModel)]="newMovie.trailer"
+    />
+  </mat-form-field>
 
-  <button mat-raised-button (click)="addMovie()">➕Add Movie</button>
+  <button mat-raised-button (click)="addMovie(newMovie)">➕Add Movie</button>
 </div>

@@ -99,10 +99,30 @@ export class MovieService {
   constructor() {}
 
   addMovie(newMovie: any) {
-    this.movies.push(newMovie);
+    // this.movies.push(newMovie);
+    return fetch(`https://669a428d9ba098ed61fef756.mockapi.io/Movies`, {
+      method: 'POST',
+      body: JSON.stringify(newMovie),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
   }
+  // loadMovies(movie: any) {
+  //   return fetch(`https://669a428d9ba098ed61fef756.mockapi.io/Movies`).then(
+  //     (res) => res.json()
+  //   );
+  //   // .then((movies) => displayAllUsers(movies));
+  // }
   deleteItem(movie: any) {
-    this.movies.splice(this.movies.indexOf(movie), 1);
+    return fetch(
+      `https://669a428d9ba098ed61fef756.mockapi.io/Movies//${movie.id}`,
+      {
+        method: 'DELETE',
+      }
+    ).then((res) => res.json());
+    //  .then(() => loadMovies());
+    // this.movies.splice(this.movies.indexOf(movie), 1);
   }
   getMovieByIdex(idx: any) {
     return this.movies[idx];

@@ -76,7 +76,7 @@
 <div class="Movie-card">
   @if (isLoading) {
   <h1>Loading....</h1>
-  } @for(movie of movies; track $index){
+  } @for(movie of movies; track movie.id){
   <app-movies
     [movie]="movie"
     (deleteItem)="deleteItem($event)"
