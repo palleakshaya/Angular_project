@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
@@ -15,21 +16,30 @@ export const routes: Routes = [
   },
   {
     path: 'movies',
-    component: MovieListComponent,
+    // component: MovieListComponent,
+    children: [
+      { path: '', component: MovieListComponent },
+      {
+        path: 'add-movie',
+        component: AddMovieComponent,
+        canActivate: [authGuard],
+      },
+      { path: ':id', component: MovieDetailsComponent },
+    ],
   },
   {
     path: 'films',
     redirectTo: '/movies',
     pathMatch: 'full',
   },
-  {
-    path: 'movies/add-movie',
-    component: AddMovieComponent,
-  },
-  {
-    path: 'movies/:id',
-    component: MovieDetailsComponent,
-  },
+  // {
+  //   path: 'movies/add-movie',
+  //   component: AddMovieComponent,
+  // },
+  // {
+  //   path: 'movies/:id',
+  //   component: MovieDetailsComponent,
+  // },
   {
     path: 'color',
     component: ColorGameComponent,
