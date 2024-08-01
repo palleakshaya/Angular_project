@@ -32,15 +32,34 @@ p{
     margin-top: 0;
     justify-content: center;
 }
-.deleteButton{
-    max-width: 20px;
+.edit-delete{
+    display: flex;
+    gap: 2px;
+}
+.editButton{
+    max-width: 1px;
     width: 100%;
 }
-.like-delete{
+.deleteButton{
+    max-width: 1px;
+    width: 100%;
+
+}
+.like-edit{
     display: flex;
-    // flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
+// .deleteButton{
+//     max-width: 15px;
+//     width: 100%;
+// }
+
+// .edit-delete{
+//     display: flex;
+//     // flex-direction: column;
+//     justify-content: space-between;
+// }
 .info{
     max-width: 20px;
     width: 100%;

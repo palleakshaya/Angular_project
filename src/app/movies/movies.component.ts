@@ -25,6 +25,7 @@ export class MoviesComponent {
     // throw new Error('Method not implemented.');
   }
   @Output() deleteItem = new EventEmitter<any>();
+  @Output() editItem = new EventEmitter<any>();
 
   @Input() movie = {
     name: '',
@@ -34,6 +35,7 @@ export class MoviesComponent {
     trailer: '',
   };
   show = true;
+  msg: string = '';
 
   showContent() {
     this.show = this.show ? false : true;
@@ -56,5 +58,23 @@ export class MoviesComponent {
     // this.router.navigate(['/movies']);
 
     this.deleteItem.emit(this.movie);
+  }
+  editMovie() {
+    this.editItem.emit(this.movie);
+  }
+  ngOnInt() {
+    this.loadMovies();
+  }
+  loadMovies() {
+    this.movieService
+      .getAllMovies()
+      .then((data) => {
+        this.movie = data;
+        // this.isLoading = false;
+      })
+      .catch(() => {
+        // this.isLoading = false;
+        this.msg = 'Something went wrong';
+      });
   }
 }

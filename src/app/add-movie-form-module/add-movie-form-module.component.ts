@@ -59,7 +59,7 @@ export class AddMovieFormModuleComponent {
           Validators.maxLength(1000),
         ],
       ],
-      trailer: ['', [Validators.required, this.urlValidator]],
+      trailer: '', //[Validators.required, this.urlValidator]],
     });
   }
   urlValidator(control: AbstractControl) {

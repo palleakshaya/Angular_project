@@ -163,4 +163,18 @@ export class MovieService {
       (res) => res.json()
     );
   }
+  updateMovie(id: string, updatedMovie: IMovie): Promise<void> {
+    return fetch(`https://669a428d9ba098ed61fef756.mockapi.io/Movies/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedMovie),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => {
+      if (!res.ok) {
+        throw new Error('Failed to update movie');
+      }
+      return res.json();
+    });
+  }
 }

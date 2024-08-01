@@ -1,0 +1,58 @@
+<form [formGroup]="movieForm" class="edit-movie-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      formControlName="poster"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie Name</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Ex: Hi Nanna"
+      formControlName="name"
+    />
+    @if(name?.touched && name?.hasError('required') ){
+    <mat-error>Name is <strong>required</strong></mat-error>
+    } @if(name?.touched && name?.hasError('minlength') ){
+    <mat-error>Please provide full movie name</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Rating</mat-label>
+    <input
+      matInput
+      type="number"
+      placeholder="Ex: 9"
+      formControlName="rating"
+    />
+    @if(rating?.touched && rating?.hasError('required') ){
+    <mat-error>Rating is <strong>required</strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('min') ){
+    <mat-error>Rating is <strong>too low </strong></mat-error>
+    } @if(rating?.touched && rating?.hasError('max') ){
+    <mat-error>Rating is too high </mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Summary</mat-label>
+    <input matInput placeholder="Enter Summary" formControlName="summary" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Trailer URL</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Enter URL"
+      formControlName="trailer"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</form>

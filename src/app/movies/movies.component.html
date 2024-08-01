@@ -15,9 +15,23 @@
   </p>
   }
 
-  <div class="like-delete">
-    <app-counter />
-    <button mat-button class="deleteButton" (click)="deleteMovie()">🗑️</button>
+  <div class="like-edit">
+    <div class="like-disike">
+      <app-counter />
+    </div>
+    <div class="edit-delete">
+      <button
+        mat-button
+        routerLink="edit-movie/{{ id }}"
+        class="editButton"
+        (click)="editMovie()"
+      >
+        📝
+      </button>
+      <button mat-button class="deleteButton" (click)="deleteMovie()">
+        🗑️
+      </button>
+    </div>
   </div>
 </div>
 
