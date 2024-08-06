@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IMovie } from './app.component';
 
+// const API = 'https://669a428d9ba098ed61fef756.mockapi.io';
+const API = 'http://localhost:4200';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -123,7 +126,7 @@ export class MovieService {
 
   addMovie(newMovie: any) {
     // this.movies.push(newMovie);
-    return fetch(`https://669a428d9ba098ed61fef756.mockapi.io/Movies`, {
+    return fetch(`${API}/Movies`, {
       method: 'POST',
       body: JSON.stringify(newMovie),
       headers: {
@@ -141,12 +144,9 @@ export class MovieService {
     return this.movies;
   }
   deleteItem(movie: any) {
-    return fetch(
-      `https://669a428d9ba098ed61fef756.mockapi.io/Movies//${movie.id}`,
-      {
-        method: 'DELETE',
-      }
-    ).then((res) => res.json());
+    return fetch(`${API}/Movies//${movie.id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
     //  .then(() => loadMovies());
     // this.movies.splice(this.movies.indexOf(movie), 1);
   }
@@ -154,17 +154,13 @@ export class MovieService {
     return this.movies[idx];
   }
   getMovieById(id: string) {
-    return fetch(
-      `https://669a428d9ba098ed61fef756.mockapi.io/Movies/${id}`
-    ).then((res) => res.json());
+    return fetch(`${API}/Movies/${id}`).then((res) => res.json());
   }
   getAllMovies() {
-    return fetch('https://669a428d9ba098ed61fef756.mockapi.io/Movies').then(
-      (res) => res.json()
-    );
+    return fetch(`${API}/Movies`).then((res) => res.json());
   }
   updateMovie(id: string, updatedMovie: IMovie): Promise<void> {
-    return fetch(`https://669a428d9ba098ed61fef756.mockapi.io/Movies/${id}`, {
+    return fetch(`${API}/Movies/${id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedMovie),
       headers: {
