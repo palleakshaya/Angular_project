@@ -10,6 +10,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { authGuard } from './auth.guard';
 import { AddMovieFormModuleComponent } from './add-movie-form-module/add-movie-form-module.component';
 import { EditMovieFormComponent } from './edit-movie-form/edit-movie-form.component';
+import { LoginUserComponent } from './login-user/login-user.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
 
       { path: ':id', component: MovieDetailsComponent },
     ],
+  },
+  {
+    path: 'login-user',
+    component: LoginUserComponent,
+    // canActivate: [authGuard],
   },
   {
     path: 'films',

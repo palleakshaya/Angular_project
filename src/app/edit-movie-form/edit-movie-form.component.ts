@@ -112,31 +112,31 @@ export class EditMovieFormComponent {
   get rating() {
     return this.movieForm.get('rating');
   }
-
-  // ngOnInit() {
-  //   this.loadMovies(this.movieId);
-  // }
-  // loadMovies(id: string) {
-  //   this.movieService.getAllMovies().then((data) => {
-  //     this.movies = data;
-  //     // this.isLoading = false;
-  //   });
-  //   // .catch(() => {
-  //   //   // this.isLoading = false;
-  //   //   this.msg = 'Something went wrong';
-  // //   // });
-  // // }
-
-  // saveMovie() {
-  //   if (this.movieForm.valid) {
-  //     let newMovie: NewMovie = this.movieForm.value;
-
-  //     this.movieService.addMovie(newMovie).then(() => {
-  //       this.router.navigate(['movies']);
-  //     });
-  //   }
-  // }
-  // cancelEdit() {
-  //   this.router.navigate(['/movies']);
-  // }
 }
+
+// ngOnInit() {
+//   this.loadMovies(this.movieId);
+// }
+// loadMovies(id: string) {
+//   this.movieService.getAllMovies().then((data) => {
+//     this.movies = data;
+//     // this.isLoading = false;
+//   });
+//   // .catch(() => {
+//   //   // this.isLoading = false;
+//   //   this.msg = 'Something went wrong';
+// //   // });
+// // }
+
+// saveMovie() {
+//   if (this.movieForm.valid) {
+//     let newMovie: NewMovie = this.movieForm.value;
+
+//     this.movieService.addMovie(newMovie).then(() => {
+//       this.router.navigate(['movies']);
+//     });
+//   }
+// }
+// cancelEdit() {
+//   this.router.navigate(['/movies']);
+// }

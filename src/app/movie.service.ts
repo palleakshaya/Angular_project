@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { IMovie } from './app.component';
 
 // const API = 'https://669a428d9ba098ed61fef756.mockapi.io';
-// const API = 'http://localhost:4000';
-const API = 'https://node-projects-n8xv.onrender.com';
+const API = 'http://localhost:4000';
+// const API = 'https://node-projects-n8xv.onrender.com';
 
 @Injectable({
   providedIn: 'root',
